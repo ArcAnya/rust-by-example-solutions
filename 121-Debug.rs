@@ -7,7 +7,7 @@ struct Person<'a> {
     age: u8
 }
 
-// Question: what's this <'_> for? 
+// Question: what's this <'_> for? => added it after receiving the following error message from the console: "indicate the anonymous lifetime: `<'_>`"
 impl Display for Person<'_> {
     fn fmt(&self, f:&mut Formatter) -> fmt::Result {
         write!(f, "His name is {} and he is {} years old.", self.name, self.age)
@@ -19,6 +19,5 @@ fn main() {
     let age = 27;
     let peter = Person { name, age };
 
-    // Pretty print
     println!("{}", peter);
 }
