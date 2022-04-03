@@ -29,8 +29,9 @@ struct Color {
 
 impl Display for Color {
   fn fmt(&self, f: &mut Formatter) -> fmt::Result {
-    // is there a more elegant way instead of repeating the self.red? with numbering? {0}, {1}...?
-    write!(f, "RGB ({}, {}, {}) 0x{:>02X}{:>02X}{:>02X}", self.red, self.green, self.blue, self.red, self.green, self.blue)
+    // It looks like the solution can be simplified as follows:
+    write!(f, "RGB ({0}, {1}, {2}) 0x{:>02X}{:>02X}{:>02X}", self.red, self.green, self.blue)
+    // todo: better understand the logic with the placeholders {0}, {1}...
     // note: took the hint to "pad with zeros to a width of 2 with :0>2" in order to get the right format 
   }
 }
