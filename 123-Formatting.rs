@@ -31,6 +31,7 @@ impl Display for Color {
   fn fmt(&self, f: &mut Formatter) -> fmt::Result {
     // is there a more elegant way instead of repeating the self.red? with numbering? {0}, {1}...?
     write!(f, "RGB ({}, {}, {}) 0x{:>02X}{:>02X}{:>02X}", self.red, self.green, self.blue, self.red, self.green, self.blue)
+    // note: took the hint to "pad with zeros to a width of 2 with :0>2" in order to get the right format 
   }
 }
 
@@ -38,13 +39,13 @@ fn main() {
   for city in [
     City { name: "Dublin", lat: 53.347778, lon: -6.259722 },
     City { name: "Oslo", lat: 59.95, lon: 10.75 },
-    City { name: "Vancouver", lat 49.25, lon: -123.1 },
+    City { name: "Vancouver", lat: 49.25, lon: -123.1 },
   ].iter() {
     println!("{}", *city);
   }
   for color in [
     Color { red: 128, green: 255, blue: 90 },
-    Color { red: 0, green: 0, blue: 0 },
+    Color { red: 0, green: 3, blue: 254 },
     Color { red: 0, green: 0, blue: 0 },
   ].iter() {
     // Switch this to use {} once you've added an implementation
