@@ -42,5 +42,11 @@ fn main() {
     
     let pi = 3.141592;
     println!("{0} is roughly {1:.3}", "Pi", pi);
+    // Trying more variants to understand better:
+    // Note: .2 indicates the argument position for the precision of the number
+    println!("{1} is roughly {2:.0$}", 3, "Pi", pi);
+    println!("{Name} is roughly {number:.prec$}", Name="Pi", number=pi, prec=3);
+    // Note: here precision needs to be specified before the number to be adjusted
+    println!("{} is roughly {:.*}", "Pi", 3, pi); 
     
 }
