@@ -30,8 +30,7 @@ struct Color {
 impl Display for Color {
   fn fmt(&self, f: &mut Formatter) -> fmt::Result {
     // It looks like the solution can be simplified as follows:
-    write!(f, "RGB ({0}, {1}, {2}) 0x{:>02X}{:>02X}{:>02X}", self.red, self.green, self.blue)
-    // todo: better understand the logic with the placeholders {0}, {1}...
+    write!(f, "RGB ({0}, {1}, {2}) 0x{0:0>2X}{1:0>2X}{2:0>2X}", self.red, self.green, self.blue)
     // note: took the hint to "pad with zeros to a width of 2 with :0>2" in order to get the right format 
   }
 }
