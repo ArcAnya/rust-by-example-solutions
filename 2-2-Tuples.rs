@@ -12,6 +12,12 @@ fn reverse(pair: (i32, bool)) -> (bool, i32) {
 #[derive(Debug)]
 struct Matrix(f32, f32, f32, f32);
 
+fn transpose(matrix: Matrix) -> Matrix {
+    let Matrix(a, b, c, d) = matrix;
+    
+    Matrix(a, c, b, d)
+}
+
 impl fmt::Display for Matrix {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // Use `self.number` to refer to each positional data point.
@@ -58,6 +64,7 @@ fn main() {
     println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
 
     let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
-    println!("{}", matrix);
+    println!("Matrix:\n{}", matrix);
+    println!("Transpose:\n{}", transpose(matrix));
 
 }
