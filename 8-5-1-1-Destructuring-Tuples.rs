@@ -1,5 +1,5 @@
 fn main() {
-  let quadruple = (6, 2, -1, 0)
+  let quadruple = (6, 2, -1, 0);
   println!("Tell me about {:?}", quadruple);
   // to destructure tuples, use match:
   match quadruple {
