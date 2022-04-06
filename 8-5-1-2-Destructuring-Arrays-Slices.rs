@@ -1,14 +1,14 @@
 fn main() {
     // Try changing the values in the array, or make it a slice!
-    let array = [4, -2, 6];
+    let array = [4, -2, 6, 12, 18];
 
     match array {
         // Binds the second and the third elements to the respective variables
-        [0, second, third] =>
+        [0, second, third, ..] =>
             println!("array[0] = 0, array[1] = {}, array[2] = {}", second, third),
 
         // Single values can be ignored with _
-        [1, _, third] => println!(
+        [1, _, third, ..] => println!(
             "array[0] = 1, array[2] = {} and array[1] was ignored",
             third
         ),
